@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2024.4.6)  1 DEC 2024 23:37
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2024.4.6)  3 DEC 2024 15:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -197,114 +197,61 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 29.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 67.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 67.
+File: figures/SNS_Docker.png Graphic file (type bmp)
+<figures/SNS_Docker.png>
 
-LaTeX Warning: Citation `Sukhwani2017Monitoringa' on page 1 undefined on input line 67.
-
-
-LaTeX Warning: Citation `Andrade2020Softwarea' on page 1 undefined on input line 67.
-
-
-LaTeX Warning: Citation `Andrade2021Memorya' on page 1 undefined on input line 67.
-
-
-LaTeX Warning: Citation `Andrade2023Comparativea' on page 1 undefined on input line 67.
-
-
-LaTeX Warning: Citation `Araujo2013Investigative' on page 1 undefined on input line 67.
-
-
-LaTeX Warning: Citation `Cotroneo2016Software' on page 1 undefined on input line 67.
-
-
-LaTeX Warning: Citation `Cotroneo2020Comprehensive' on page 1 undefined on input line 67.
-
-
-LaTeX Warning: Citation `Grottke2006Analysis' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Citation `Matias2006Experimental' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Citation `Sukhwani2017Monitoringa' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Citation `Andrade2020Softwarea' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Citation `Andrade2021Memorya' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Citation `Andrade2023Comparativea' on page 1 undefined on input line 68.
-
-
-Underfull \hbox (badness 8038) in paragraph at lines 150--151
-[]\JY1/mc/m/n/10 サ ーバ ー\OT1/cmr/m/n/10 :HP Z2 mini G9 work-
+Overfull \hbox (41.157pt too wide) in paragraph at lines 105--107
+ [][] 
  []
 
 
-Underfull \hbox (badness 2799) in paragraph at lines 150--151
-\OT1/cmr/m/n/10 sta-tion desk-top PC\JY1/mc/m/n/10 ， \OT1/cmr/m/n/10 13th Gen In-
+Underfull \hbox (badness 1466) in paragraph at lines 119--120
+[]\JY1/mc/m/n/10 サ ーバ ー\OT1/cmr/m/n/10 :HP Z2 mini G9 work-sta-tion desk-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
-\OT1/cmr/m/n/10 tel(R)Core(TM) i9-13900 3.00GHz\JY1/mc/m/n/10 ，
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+[]\JY1/mc/m/n/10 クライアント\OT1/cmr/m/n/10 :Desktop-7CL98lG\JY1/mc/m/n/10 ， \OT1/cmr/m/n/10 In-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
-[]\JY1/mc/m/n/10 クライアント\OT1/cmr/m/n/10 :Desktop-7CL98lG\JY1/mc/m/n/10 ，
+Underfull \hbox (badness 6775) in paragraph at lines 120--121
+\OT1/cmr/m/n/10 tel(R) Core(TM) i7-6600U CPU 2.60GHz\JY1/mc/m/n/10 ，
  []
 
 
-Underfull \hbox (badness 7133) in paragraph at lines 151--152
-\OT1/cmr/m/n/10 In-tel(R) Core(TM) i7-6600U CPU
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
-\OT1/cmr/m/n/10 2.60GHz\JY1/mc/m/n/10 ， \OT1/cmr/m/n/10 RAM:8.00GB\JY1/mc/m/n/10 ， \OT1/cmr/m/n/10 Win10
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [1
 
 
 ]
-Overfull \hbox (3.11153pt too wide) in paragraph at lines 174--184
- [][][][] 
- []
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 167.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 167.
+
+LaTeX Warning: Reference `subsec:loa2' on page 2 undefined on input line 167.
 
 File: figures/8core_1_15rps_error_rate.png Graphic file (type bmp)
 <figures/8core_1_15rps_error_rate.png>
-
-Overfull \hbox (15.7603pt too wide) in paragraph at lines 197--198
- [][] 
- []
-
 File: figures/8core_1_15rps_increase_cpu.png Graphic file (type bmp)
 <figures/8core_1_15rps_increase_cpu.png>
 File: figures/8core_1_15rps_increase_mem.png Graphic file (type bmp)
 <figures/8core_1_15rps_increase_mem.png>
-
-Overfull \hbox (22.3248pt too wide) in paragraph at lines 194--214
-[][][][] 
- []
-
-
-Underfull \hbox (badness 1320) in paragraph at lines 245--246
+[2]
+Underfull \hbox (badness 1320) in paragraph at lines 214--215
 []\OT1/cmr/m/n/10 D.L.Parnas,  \JY1/mc/m/n/10 “ \OT1/cmr/m/n/10 Pro-ceed-ings of the 16th In-ter-
  []
 
 
-Underfull \hbox (badness 2818) in paragraph at lines 245--246
+Underfull \hbox (badness 2818) in paragraph at lines 214--215
 \OT1/cmr/m/n/10 na-tional Con-fer-ence on Soft-ware En-gi-neer-ing
  []
 
-[2] (out/OR2025譏^^a5Kondo.aux)
+[3
+
+] (out/OR2025譏^^a5Kondo.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -315,12 +262,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2608 strings out of 476210
- 38362 string characters out of 5795035
- 1936341 words of memory out of 5000000
- 24829 multiletter control sequences out of 15000+600000
+ 2613 strings out of 476210
+ 38451 string characters out of 5795035
+ 1937341 words of memory out of 5000000
+ 24833 multiletter control sequences out of 15000+600000
  570975 words of font info for 92 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 57i,12n,65p,418b,436s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,8n,65p,392b,307s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/OR2025譏^^a5Kondo.dvi (2 pages, 16356 bytes).
+Output written on out/OR2025譏^^a5Kondo.dvi (3 pages, 13640 bytes).
