@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2024.4.6)  3 DEC 2024 15:51
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2024.4.6)  4 DEC 2024 13:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -205,18 +205,23 @@ Overfull \hbox (41.157pt too wide) in paragraph at lines 105--107
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 119--120
+Underfull \hbox (badness 1466) in paragraph at lines 118--119
 []\JY1/mc/m/n/10 サ ーバ ー\OT1/cmr/m/n/10 :HP Z2 mini G9 work-sta-tion desk-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 []\JY1/mc/m/n/10 クライアント\OT1/cmr/m/n/10 :Desktop-7CL98lG\JY1/mc/m/n/10 ， \OT1/cmr/m/n/10 In-
  []
 
 
-Underfull \hbox (badness 6775) in paragraph at lines 120--121
-\OT1/cmr/m/n/10 tel(R) Core(TM) i7-6600U CPU 2.60GHz\JY1/mc/m/n/10 ，
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+\OT1/cmr/m/n/10 tel(R) Core(TM)i7-6600U CPU@2.60GHz\JY1/mc/m/n/10 ，
+ []
+
+
+Overfull \hbox (15.58276pt too wide) in paragraph at lines 125--125
+[][]\OT1/cmr/m/n/8 https://docs.docker.com/reference/cli/docker/container/stats/| 
  []
 
 
@@ -227,11 +232,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 167.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 164.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 167.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 164.
 
-LaTeX Warning: Reference `subsec:loa2' on page 2 undefined on input line 167.
+LaTeX Warning: Reference `subsec:loa1' on page 2 undefined on input line 164.
 
 File: figures/8core_1_15rps_error_rate.png Graphic file (type bmp)
 <figures/8core_1_15rps_error_rate.png>
@@ -240,12 +245,12 @@ File: figures/8core_1_15rps_increase_cpu.png Graphic file (type bmp)
 File: figures/8core_1_15rps_increase_mem.png Graphic file (type bmp)
 <figures/8core_1_15rps_increase_mem.png>
 [2]
-Underfull \hbox (badness 1320) in paragraph at lines 214--215
+Underfull \hbox (badness 1320) in paragraph at lines 215--216
 []\OT1/cmr/m/n/10 D.L.Parnas,  \JY1/mc/m/n/10 “ \OT1/cmr/m/n/10 Pro-ceed-ings of the 16th In-ter-
  []
 
 
-Underfull \hbox (badness 2818) in paragraph at lines 214--215
+Underfull \hbox (badness 2818) in paragraph at lines 215--216
 \OT1/cmr/m/n/10 na-tional Con-fer-ence on Soft-ware En-gi-neer-ing
  []
 
@@ -262,12 +267,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2613 strings out of 476210
- 38451 string characters out of 5795035
- 1937341 words of memory out of 5000000
- 24833 multiletter control sequences out of 15000+600000
+ 2614 strings out of 476210
+ 38469 string characters out of 5795035
+ 1938341 words of memory out of 5000000
+ 24834 multiletter control sequences out of 15000+600000
  570975 words of font info for 92 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 57i,8n,65p,392b,307s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,9n,65p,392b,310s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/OR2025譏^^a5Kondo.dvi (3 pages, 13640 bytes).
+Output written on out/OR2025譏^^a5Kondo.dvi (3 pages, 13692 bytes).
