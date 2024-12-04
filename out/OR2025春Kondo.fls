@@ -109,7 +109,6 @@ INPUT ./figures/SNS_Docker.png
 INPUT extractbb -B cropbox -O figures/SNS_Docker.png
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 OUTPUT out/OR2025春Kondo.dvi
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT ./figures/8core_1_15rps_error_rate.png
 INPUT ./figures/8core_1_15rps_error_rate.png
 INPUT ./figures/8core_1_15rps_error_rate.png

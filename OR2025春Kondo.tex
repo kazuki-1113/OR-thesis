@@ -39,8 +39,7 @@
 % ソフトウェアエージング関連のバグが蓄積し，それがシステムの性能劣化として現れることを未然に防ぐことが目的である．
 
 本研究では，ソフトウェアエージングの研究対象として，SNSシステムの一つであるOpenPNE\footnote{https://www.openpne.jp/about/}を選択する．
-SNSならではの変動する負荷期間を想定し，監視期間における3種類のメトリクスに着目する．
-その結果，比較的低い一定負荷においても，少なくともソフトウェアエージングの潜在可能性を確認できた(暫定)．
+SNSならではの変動する負荷期間を想定し，監視期間における3種類のメトリクスに着目し，ソフトウェアエージングのリスク調査を目指す．
 
 \section{研究目的}
 % \subsection{関連研究}
@@ -88,10 +87,10 @@ SNSならではの変動する負荷期間を想定し，監視期間におけ�
 % 開発の敷居が比較的低く，NHK出版やガンホーゲームのファンサイトなど複数の導入事例もあるSNSということで選択した．
 % SNSならではの拡張性の高さも備えており，セットアップに関して，多数の文書が提供されていることも後押しになった．
 これまでのソフトウェアエージングに関する研究の中で直接的にSNSシステムを対象にしたものは，私たちの知る限りない．
-現代のSNSシステムは拡張性も高くユーザー数も莫大であることに伴い，X社\footnote{https://about.x.com/ja}のような運営企業にとって，サーバーの運用リスクは高まっているといえる．
+X\footnote{https://about.x.com/ja}のようなSNSシステムは，拡張性も高く莫大なユーザー数を抱えるため，企業にとってサーバー運用のリスクは高まっているといえる．
 % また，SNSシステム独自のアクセス負荷の時系列変化も考えられる\footnote{https://note.fuller-inc.com/n/ne35c0cdba519}．
 % そして，機能も非常に複雑で高層的な処理が必要になるため，サーバーのメトリクス(CPUやメモリ)に代表されるようなSNSに関するあらゆるメトリクスを分析し評価する必要性があると考えられる．
-本研究では，Measurement-based Approach\cite{Dohi2020Handbook}に則って，ソフトウェアエージングの潜在可能性を調査する．
+本研究では，Measurement-based Approach\cite{Dohi2020Handbook}に則って，ソフトウェアエージングのリスクを調査する．
 特に，SNSシステムならではの負荷シナリオを検討し，それぞれにおいて，負荷期間と監視期間\cite{Torquato2018SWAREa}を設けることで，シナリオ毎のソフトウェアエージングの調査を行う．
 % そのため，現実のユーザーの運用とは異なると述べられている論文もある\cite{Andrade2023Comparativea}．
 % 負荷シナリオの検討においては，なるべくシンプルでありながら,ソフトウェアエージングを引き出すようなバランスの取れたストレステストの考案が必要であると考えられる\cite{Cotroneo2016Software}．
@@ -107,61 +106,62 @@ SNSならではの変動する負荷期間を想定し，監視期間におけ�
   \caption{SNS運用環境と負荷ツール}
   \label{fig:1}
 \end{figure}
-図\ref{fig:1}が実験環境であり，Dockerにより，ホストPCのWindows OSとOpenPNEの運用環境を隔離している．
+図\ref{fig:1}が実験環境であり，二つのデバイスで構成される.
+サーバーPCでは，Dockerにより，Windows OSとOpenPNEの運用環境を隔離している．
 また，OpenPNEの環境をDocker上に独立させることで移植性が高く，メトリクスをクリーンに取得できる．
-一方で，負荷ツールとはLANケーブルでつなぐため，物理的な接続の影響を受けるリスクがある．
+JmeterをインストールしたクライアントPCとは，LANケーブルでつなぐ．
+そのため，物理的な接続の影響を受けるリスクがあるが通信関連の外部的な影響は排除できる．
 
 本研究で使用する物理デバイスは以下のとおりである:
 \begin{itemize}
   \setlength{\parskip}{0cm} % 段落間
   \setlength{\itemsep}{0cm} % 項目間
-  \item サーバー:HP Z2 mini G9 workstation desktop PC，13th Gen Intel(R)Core(TM) i9-13900 3.00GHz，RAM:16.00GB，Win11 pro，23H2
-  \item クライアント:Desktop-7CL98lG，Intel(R) Core(TM)i7-6600U CPU@2.60GHz，RAM:8.00GB，Win10 Enterprise，22H2
+  \item サーバーPC:HP Z2 mini G9 workstation desktop PC，13th Gen Intel(R)Core(TM) i9-13900 3.00GHz，RAM:16.00GB，Win11 pro，23H2
+  \item クライアントPC:Desktop-7CL98lG，Intel(R) Core(TM)i7-6600U CPU@2.60GHz，RAM:8.00GB，Win10 Enterprise，22H2
 \end{itemize}
 また，データ収集は以下のように行う:
 \begin{itemize}
   \setlength{\parskip}{0cm} % 段落間
   \setlength{\itemsep}{0cm} % 項目間
   \item サーバー側:Docker stats\footnote{https://docs.docker.com/reference/cli/docker/container/stats/}コマンドで取得．\par
-  計測対象:CPU使用率，メモリ使用量(0.5秒毎)
+  メトリクス:CPU使用率，メモリ使用量(0.5秒毎)
   \item クライアント側:Jmeter\footnote{https://jmeter.apache.org/}で全リクエストを取得．\par
-  計測対象:リクエストエラー率(※エラー率と表記)
+  メトリクス:エラー率
 \end{itemize}
 
 \section{実験}
-以下の実験において，負荷の大きさは，RPS(Requests Per Second)で表し，Jmeterで設定する．
+以下の実験において，負荷の大きさは，RPS (Requests Per Second)で表し，Jmeterで設定する．
 0h～1hでは10,000スレッドを立ち上げ，1h～25hでは，シナリオ毎の負荷を与える．
-これらに加え，本研究では，Torquatoらが2018年に，ストレス期間，待期期間，若化期間のそれぞれでリソースの監視を行った研究を参考にし，本研究では監視期間というものを考える．
-そのため，\ref{subsec:load1}，\ref{subsec:load2}では25h～27hの期間を追加し，10RPSの負荷を与えメトリクスを監視する．
+これらに加え，本研究では，Torquatoらの2018年の研究を参考にし監視期間を考え，\ref{subsec:load1}節，\ref{subsec:load2}節では25h～27hの期間を追加し，10RPSの負荷を与えメトリクスを監視する．
+% 2018年に，ストレス期間，待期期間，若化期間のそれぞれでリソースの監視を行った研究を参考にし，本研究では監視期間というものを考える．
 \subsection{本研究の性能調査}\label{subsec:limit}
-本節では，複数のRPSで負荷を与え，本環境のサーバーの性能限界を推定する．
+本節では，RPS=10,30,50,70で負荷を与え，本環境のサーバーの性能限界を推測する．
 \begin{table}[h]
   \centering
   \caption{エラー率と性能限界}
   \label{tab:rps}
-  \begin{tabular}{cccc}
+  \begin{tabular}{ccccc}
     \hline \hline
-    RPS & error rate[\%] & estimated RPS \\ \hline
-    10 & 0.87 & - \\ \hline
-    30 & 56.51 & 13.5 \\ \hline
-    50 & 72.75 & 13.63 \\ \hline
-    70 & 80.20 & 15.33 \\ \hline \hline
-    % 90 & x & x & x \\ \hline \hline
-    Avg & - & 14.15 \\ \hline
+    負荷 [RPS] & 10 & 30 & 50 & 70 \\ \hline
+    エラー率 [\%] & 0.87 & 56.51 & 72.75 & 80.20 \\ \hline
+    性能限界 [RPS] & 9.91 & 13.5 & 13.63 & 15.33 \\ \hline
   \end{tabular}
 \end{table}
 
 表\ref{tab:rps}は，複数の一定負荷シナリオのエラー率，およびそれらの値から推定できる性能限界を示したものである．
-この結果から，本環境の性能限界は14.15RPSであると推定する．
-また，メモリ使用量について，Mann-Kendall検定とSenの傾き推定の結果から，10RPSと50RPSでソフトウェアエージングのリスクが認められた．\par
+この結果から，本環境の性能限界は14.15RPSであると推測する．
 
 \subsection{シナリオ1:一定負荷}\label{subsec:load1}
+\ref{subsec:limit}節の結果より，RPS=5，10，15RPで試行する．
+現実の状況において，定常的な状態と対応する．
 5，10，15RPSの図，検定結果，ページ制限のためテキストのみでも可
 
-\subsection{シナリオ2:増加負荷(監視期間2H)}\label{subsec:load2} 
+\subsection{シナリオ2:増加負荷(監視期間2H)}
+\label{subsec:load2} 
 
-\ref{subsec:limit}の結果より，1～15RPSの増加変動を行い，アクセスが増加するという現象を想定する．
-対照実験として，\ref{subsec:loa1}の結果と比較し，監視期間における各メトリクスの変動に着目し，ソフトウェアエージングの影響の差異に着目する．
+\ref{subsec:limit}節の結果より，性能限界の範囲内で増加変動を行い，SNSが注目を集める現象を想定する．
+具体的には，1hから25hにかけて，1RPSから15RPSまで線形に負荷を増加させる．
+対照実験として，\ref{subsec:load1}節の結果と比較し，監視期間における各メトリクスの変動に着目し，ソフトウェアエージングの影響の差異に着目する．
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.1,width=60mm]{figures/8core_1_15rps_error_rate.png}
@@ -184,12 +184,14 @@ SNSならではの変動する負荷期間を想定し，監視期間におけ�
 図\ref{f1}，\ref{f2}，\ref{f3}は，1～15RPSの増加負荷における各メトリクスの時系列変化である．
 スレッド立ち上げ期間は負荷の大きさから各メトリクスが比較的高い値を示している．
 増加負荷の期間については，増加に伴い，全メトリクスが増加していることが分かる．
-特に，エラー率については，RPSが10RPS程度に至る15時間ごろから極端に増加しており，推定RPSよりも低い負荷の段階でエラーを生じた．
+特に，エラー率については，負荷が10RPS程度に至る15時間ごろから極端に増加しており，推測した性能限界よりも低い負荷の段階でエラーを生じた．
 一方で，他二つのメトリクスについては，その時間帯までは増加傾向にあったが，それ以降は極端な増加は少なくとも見られない．
-また，負荷後2時間のメトリクスについて，
+また，負荷後2時間のメトリクスについて\ref{subsec:load1}節の結果と比較する．
 
-考察としては，コンテナに割り当てたメモリは16GB，CPUは8コアであるが，前者は50\%以下，後者は20\%～80\%の使用率であることを考えると，メモリ使用の設定に問題があると考えられる．
-この主な原因は，phpのmpm\_eventモジュールが並列処理に不適な環境であることだと考えられる．
+考察としては，コンテナに割り当てたメモリは16GB，CPUは8コアであるが，前者は25\%以下，後者は20\%～80\%の使用率である．
+% ここの考察については，卒論では書く
+% ことを考えると，メモリ使用の設定に問題があると考えられる．
+% この主な原因は，phpのmpm\_eventモジュールが並列処理に不適な環境であることだと考えられる．
 以降については，追加実験の結果が出てから．
 
 \section{結論と今後の展望}
@@ -208,14 +210,14 @@ SNSならではの変動する負荷期間を想定し，監視期間におけ�
   \textwidth 5pt
   \vskip\baselineskip
   \setlength\baselineskip{6pt}%←ここの数値を調整（追加）(文字の大きさ)
-  \bibitem{Adams1984Optimizing}
-  Adams, N.Edward, “Optimizing Preventive Service of Software Products,” IBM Journal of Research and Development, vol. 28, no. 1, pp. 2-14, 1984.
+  % \bibitem{Adams1984Optimizing}
+  % Adams, N.Edward, “Optimizing Preventive Service of Software Products,” IBM Journal of Research and Development, vol. 28, no. 1, pp. 2-14, 1984.
 
-  \bibitem{Parnas1994Software}
-  D.L.Parnas, “Proceedings of the 16th International Conference on Software Engineering (ICSE1994),” Software aging, pp. 279-287, 1994.
+  % \bibitem{Parnas1994Software}
+  % D.L.Parnas, “Proceedings of the 16th International Conference on Software Engineering (ICSE1994),” Software aging, pp. 279-287, 1994.
 
-  \bibitem{Huang1995Software}
-  Y.Huang, C.Kintala, N.Kolettis and N.D.Fulton, “Software Rejuvenation: Analysis, Module and Applications,” 25th International Symposium on Fault-Tolerant Computing(FTCS1995), pp. 381-390, 1995.
+  % \bibitem{Huang1995Software}
+  % Y.Huang, C.Kintala, N.Kolettis and N.D.Fulton, “Software Rejuvenation: Analysis, Module and Applications,” 25th International Symposium on Fault-Tolerant Computing(FTCS1995), pp. 381-390, 1995.
 
   \bibitem{Dohi2020Handbook}
   T.Dohi, K.Trivedi and A.Avritzer, “Handbook of Software Aging and Rejuvenation,” WORLD SCIENTIFIC, pp. 73-90, 2020.
