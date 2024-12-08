@@ -28,18 +28,18 @@
 %%%%%%%%%% ここから本文%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{序論}
 現代では，ソフトウェアは私たちの身の回りから宇宙規模のものまでに至り，非常に長時間の連続稼働が必要なものも数多く存在する．
-そのような連続稼働により予期しない性能劣化が生じる現象は「ソフトウェアエージング」と呼ばれ、特に高可用性が要求されるソフトウェアにおいて、ソフトウェアエージングの潜在可能性を定量的に評価する必要性が高まっている．
+そのような連続稼働により予期しない性能劣化が生じる現象は「ソフトウェアエージング」と呼ばれ，特に高可用性が要求される最新のソフトウェアにおいて，ソフトウェアエージングのリスクを定量的に評価する必要性が高まっている．
 % 特に，ソフトウェアエージング関連の障害は，開発の段階で発見し，完全に原因を解決することは難しいものであるとも述べられている\cite{Grottke2007Fightinga}．\par
 % 1990年代初頭から，ソフトウェアエージングに関する広範な研究が行われてきた．
 % しかし，ソフトウェアエージングの振舞はソフトウェアシステムの種類によって異なる．
 % そのため，ソフトウェアエージングのリスクを評価することは，ソフトウェアシステムの種類ごとに不可欠だと言える．
 % 身近なデジタルサービスから社会的な機能を提供する現代のソフトウェアシステムの多くは，伝統的なクライアント/サーバーシステムで構築され様々な種類が存在する．
 % いくつかの研究\cite{Grottke2006Analysis}\cite{Alonso2010Adaptive}\cite{Alonso2011Predicting}\cite{Magalhaes2010Prediction}は，これらのシステムを評価している．\par
-% また、ソフトウェアエージングのリスクが観測された場合，次に検討すべきはソフトウェア若化手法の検討である．
+% また，ソフトウェアエージングのリスクが観測された場合，次に検討すべきはソフトウェア若化手法の検討である．
 % ソフトウェアエージング関連のバグが蓄積し，それがシステムの性能劣化として現れることを未然に防ぐことが目的である．
 
 本研究では，ソフトウェアエージングの研究対象として，SNSシステムの一つであるOpenPNE\footnote{https://www.openpne.jp/about/}を選択する．
-SNSならではの変動する負荷期間を想定し，監視期間における3種類のメトリクスに着目し，ソフトウェアエージングのリスク調査を目指す．
+SNSならではの変動する負荷期間を想定し，共通の監視期間における三種類のメトリクスに着目し，ソフトウェアエージングのリスク調査を目指す．
 
 \section{研究目的}
 % \subsection{関連研究}
@@ -102,11 +102,11 @@ X\footnote{https://about.x.com/ja}のようなSNSシステムは，拡張性も�
 \begin{figure}
   \centering
   \includegraphics[scale=0.29]{figures/SNS_Docker.png}
-  \vspace{0.05cm}
+  \vspace{-0.6cm}
   \caption{SNS運用環境と負荷ツール}
   \label{fig:1}
 \end{figure}
-図\ref{fig:1}が実験環境であり，二つのデバイスで構成される.
+図\ref{fig:1}が実験環境であり，二つのデバイスで構成される．
 サーバーPCでは，Dockerにより，Windows OSとOpenPNEの運用環境を隔離している．
 また，OpenPNEの環境をDocker上に独立させることで移植性が高く，メトリクスをクリーンに取得できる．
 JmeterをインストールしたクライアントPCとは，LANケーブルでつなぐ．
@@ -128,17 +128,18 @@ JmeterをインストールしたクライアントPCとは，LANケーブルで
   \item クライアント側:Jmeter\footnote{https://jmeter.apache.org/}で全リクエストを取得．\par
   メトリクス:エラー率
 \end{itemize}
-
 \section{実験}
 以下の実験において，負荷の大きさは，RPS (Requests Per Second)で表し，Jmeterで設定する．
-0h～1hでは10,000スレッドを立ち上げ，1h～25hでは，シナリオ毎の負荷を与える．
-これらに加え，本研究では，Torquatoらの2018年の研究を参考にし監視期間を考え，\ref{subsec:load1}節，\ref{subsec:load2}節では25h～27hの期間を追加し，10RPSの負荷を与えメトリクスを監視する．
+0h～1hでは10,000スレッドを立ち上げ，1h～25hをシナリオ毎の負荷期間とする．
+これらに加え，本研究では，Torquatoらの2018年の研究を参考にし監視期間を考え，\ref{subsec:load1}節，\ref{subsec:load2}節では25h～27hに監視期間を追加し，10RPSの負荷を与えメトリクスを監視する．
 % 2018年に，ストレス期間，待期期間，若化期間のそれぞれでリソースの監視を行った研究を参考にし，本研究では監視期間というものを考える．
-\subsection{本研究の性能調査}\label{subsec:limit}
-本節では，RPS=10,30,50,70で負荷を与え，本環境のサーバーの性能限界を推測する．
+
+\subsection{本研究の性能調査}
+\label{subsec:limit}
+本節では，RPS$=$10,30,50,70で負荷を与え，本環境のサーバーの性能限界を推測する．
 \begin{table}[h]
   \centering
-  \caption{エラー率と性能限界}
+  \caption{エラー率とサーバーの性能限界}
   \label{tab:rps}
   \begin{tabular}{ccccc}
     \hline \hline
@@ -148,68 +149,80 @@ JmeterをインストールしたクライアントPCとは，LANケーブルで
   \end{tabular}
 \end{table}
 
-表\ref{tab:rps}は，複数の一定負荷シナリオのエラー率，およびそれらの値から推定できる性能限界を示したものである．
-この結果から，本環境の性能限界は14.15RPSであると推測する．
+表\ref{tab:rps}は，エラー率および結果から推定できるサーバーの性能限界を示したものである．
+性能限界は，1秒間に正しく処理できるリクエスト数だと仮定し，性能限界$=$与えた負荷$×$リクエスト成功率(100$-$エラー率)$/$100の計算により得られたものである。
+この結果から，本環境の性能限界は12～15RPS程度であると推測する．
 
 \subsection{シナリオ1:一定負荷}\label{subsec:load1}
-\ref{subsec:limit}節の結果より，RPS=5，10，15RPで試行する．
-現実の状況において，定常的な状態と対応する．
-5，10，15RPSの図，検定結果，ページ制限のためテキストのみでも可
+\ref{subsec:limit}節の結果より，RPS$=$5，10，15で試行する．
+現実において，定常的な状況と対応する．
+三つの負荷シナリオについて，1h～25hの負荷期間における全メトリクスは，Mann-Kendall検定\cite{Mann1945Nonparametric}により帰無仮説が否定された．
+また，Senの傾き推定\cite{Sen1968Estimates}により傾き$E$の推定値は，0.00005～0.0035の範囲と非常に小さいものの，正の値を示し，ソフトウェアエージングのリスクが発見された．
+ただし，検定の対象からは，スレッド立ち上げの影響が残る負荷期間の最初の15分を除く．
 
-\subsection{シナリオ2:増加負荷(監視期間2H)}
-\label{subsec:load2} 
+\subsection{シナリオ2:増加負荷(監視期間2h)}
+\label{subsec:load2}
 
-\ref{subsec:limit}節の結果より，性能限界の範囲内で増加変動を行い，SNSが注目を集める現象を想定する．
-具体的には，1hから25hにかけて，1RPSから15RPSまで線形に負荷を増加させる．
-対照実験として，\ref{subsec:load1}節の結果と比較し，監視期間における各メトリクスの変動に着目し，ソフトウェアエージングの影響の差異に着目する．
-\begin{figure}[H]
+\ref{subsec:limit}節の結果より，推測した性能限界の範囲内で増加変動を行い，現実における注目度が高まる状況を想定する．
+具体的には，1h～25hにかけて，1RPSから15RPSまで線形に負荷を増加させる．
+対照実験である\ref{subsec:load1}節の結果と比較し，監視期間における各メトリクスの変動に着目する．
+\vspace{0.1cm}
+\begin{figure}[h]
   \centering
-  \includegraphics[scale=0.1,width=60mm]{figures/8core_1_15rps_error_rate.png}
-  \caption{エラー率}
+  \includegraphics[width=4.3cm]{figures/8core_1_15rps_increase_cpu.png}
+  \vspace{-0.5cm}
+  \caption{CPU使用率}
   \label{f1}
 \end{figure}
-\begin{figure}[H]
+\vspace{-0.5cm}
+\begin{figure}[h]
   \centering
-  \includegraphics[scale=0.1,width=60mm]{figures/8core_1_15rps_increase_cpu.png}
-  \caption{CPU使用率}
-  \label{f2}
-% \end{figure}
-% \begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.1,width=60mm]{figures/8core_1_15rps_increase_mem.png}
+  \includegraphics[width=4.3cm]{figures/8core_1_15rps_increase_mem.png}
+  \vspace{-0.5cm}
   \caption{メモリ使用量}
+  \label{f2}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=4.7cm]{figures/8core_1_15rps_error_rate.png}
+  \vspace{-0.5cm}
+  \caption{エラー率}
   \label{f3}
 \end{figure}
+\vspace{-0.4cm}
 
-図\ref{f1}，\ref{f2}，\ref{f3}は，1～15RPSの増加負荷における各メトリクスの時系列変化である．
+図\ref{f1}，\ref{f2}，\ref{f3}は，増加負荷における各メトリクスの時系列変化である．
 スレッド立ち上げ期間は負荷の大きさから各メトリクスが比較的高い値を示している．
-増加負荷の期間については，増加に伴い，全メトリクスが増加していることが分かる．
-特に，エラー率については，負荷が10RPS程度に至る15時間ごろから極端に増加しており，推測した性能限界よりも低い負荷の段階でエラーを生じた．
-一方で，他二つのメトリクスについては，その時間帯までは増加傾向にあったが，それ以降は極端な増加は少なくとも見られない．
-また，負荷後2時間のメトリクスについて\ref{subsec:load1}節の結果と比較する．
-
-考察としては，コンテナに割り当てたメモリは16GB，CPUは8コアであるが，前者は25\%以下，後者は20\%～80\%の使用率である．
+増加負荷の期間については，負荷の増加に伴い，全メトリクスが増加していることが分かる．
+特に，エラー率については，負荷が10RPS程度に至る16時間ごろから極端に増加しており，推測した性能限界よりも低い負荷の段階でエラーを生じた．
+一方で，他二つのメトリクスについては，同時間帯までは増加傾向にあったが，それ以降極端な増加は少なくとも見られない．
+これまでの\ref{subsec:limit}や\ref{subsec:load1}節の結果と併せて考えると，メモリ使用量がCPU使用率よりも先に制限に達したことで，エラー率が上昇し始めたと考察する．
+ただし，この制限は本研究における環境設定の不備だと考えられる．
+具体的には，コンテナに割り当てたメモリは16GB，CPUは8コアであるが，前者は25\%以下，後者は20\%～80\%程度の使用率であるにも関わらず，エラーを生じている．\par
 % ここの考察については，卒論では書く
 % ことを考えると，メモリ使用の設定に問題があると考えられる．
 % この主な原因は，phpのmpm\_eventモジュールが並列処理に不適な環境であることだと考えられる．
-以降については，追加実験の結果が出てから．
-
+また，\ref{subsec:load1}節の結果と比較すると，メモリ使用率，CPU使用率に関しては，負荷期間による監視期間のメトリクスの変動への影響は見られなかった．
+% 一方で，エラー率に関しては，その直前の負荷の程度の影響を受ける可能性があると考察する．
+% これは，増加負荷と\ref{subsec:load1}節のRPS$=$15の場合を比較すると，視覚的に似た変動をしていたためである．
+% ，RPS=5，10の場合と異なり
 \section{結論と今後の展望}
-結論．\par
-本研究では，比較的シンプルなSNSの設定で行い，〇〇と分かったが，より高度な拡張機能を有したものにし適切な設定を整えたうえで，ここで得られた知見の検定を行うことが課題である．
+本研究では，比較的シンプルなSNSの設定で行い，サーバーの性能限界の推測および比較的低い一定負荷においてもソフトウェアエージングのリスクがあることを発見した．
+一方で，増加負荷による各メトリクスの影響は発見できなかった．
+今後は，より高度な拡張機能を追加し適切な設定を整えたうえで，ここで得られた知見の検定を行うことが課題である．
 近年では，SNSだけでなく，多くのWebサーバーは，クラウド環境に用意されている．
-そのため，今後SNSをクラウド環境にデプロイするなどして，大規模でより現実的な負荷テストを行うことが望ましいと言える．
+そのため，今後OpenPNEをクラウド環境にデプロイするなどして，大規模でより現実的な負荷テストを行うことが望ましいと言える．
 % また，本研究ではソフトウェア若化手法についての検討を行っていない．
 % 再起動やガベージコレクションの管理などの代表的な若化手法を，いつ実行すべきかを検討する必要がある．
 
 
 %%%%%%%%% ここから参考文献 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{thebibliography}{5}
-  \setlength\itemsep{0.5zh}%←ここの数値を調整(行間のつまり具合)
-  \setlength\baselineskip{9pt}
+  \setlength\itemsep{0.1zh}%←ここの数値を調整(行間のつまり具合)
+  \setlength\baselineskip{8pt}
   \textwidth 5pt
   \vskip\baselineskip
-  \setlength\baselineskip{6pt}%←ここの数値を調整（追加）(文字の大きさ)
+  \setlength\baselineskip{4pt}%←ここの数値を調整（追加）(文字の大きさ)
   % \bibitem{Adams1984Optimizing}
   % Adams, N.Edward, “Optimizing Preventive Service of Software Products,” IBM Journal of Research and Development, vol. 28, no. 1, pp. 2-14, 1984.
 
@@ -223,7 +236,13 @@ JmeterをインストールしたクライアントPCとは，LANケーブルで
   T.Dohi, K.Trivedi and A.Avritzer, “Handbook of Software Aging and Rejuvenation,” WORLD SCIENTIFIC, pp. 73-90, 2020.
 
   \bibitem{Torquato2018SWAREa}
-  M.Torquato, Araujo, Matheus, Jean, I.M.Umesh, and P.Maciel, “SWARE: A Methodology for Software Aging and Rejuvenation Experiments,” Journal of Information Systems Engineering \& Management vol. 3, 2018.
+  M.Torquato, Araujo, Matheus, Jean, I.M.Umesh, and P.Maciel, “SWARE: A Methodology for Software Aging and Rejuvenation Experiments,” Journal of Information Systems Engineering \& Management, vol. 3, 2018.
+
+  \bibitem{Mann1945Nonparametric}
+  H.B.Mann, “Nonparametric Tests Against Trend,” Econometrica, vol. 13, no. 3, pp. 245-259, 1945.
+
+  \bibitem{Sen1968Estimates}
+  P.Sen, “Estimates of the Regression Coefficient Based on Kendall's Tau,” Journal of the American Statistical Association, vol. 63, no. 324, pp. 1379-1389, 1968.
 
 \end{thebibliography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

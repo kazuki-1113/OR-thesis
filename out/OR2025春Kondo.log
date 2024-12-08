@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2024.4.6)  4 DEC 2024 16:38
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2024.4.6)  9 DEC 2024 01:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -219,22 +219,20 @@ Overfull \hbox (15.58276pt too wide) in paragraph at lines 126--126
 [][]\OT1/cmr/m/n/8 https://docs.docker.com/reference/cli/docker/container/stats/| 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [1
 
 
 ]
-File: figures/8core_1_15rps_error_rate.png Graphic file (type bmp)
-<figures/8core_1_15rps_error_rate.png>
 File: figures/8core_1_15rps_increase_cpu.png Graphic file (type bmp)
 <figures/8core_1_15rps_increase_cpu.png>
 File: figures/8core_1_15rps_increase_mem.png Graphic file (type bmp)
 <figures/8core_1_15rps_increase_mem.png>
-[2] [3
+File: figures/8core_1_15rps_error_rate.png Graphic file (type bmp)
+<figures/8core_1_15rps_error_rate.png>
 
-] (out/OR2025譏^^a5Kondo.aux)
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2] (out/OR2025譏^^a5Kondo.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -242,12 +240,12 @@ L3 programming layer <2024-03-14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 2605 strings out of 476210
- 38329 string characters out of 5795035
- 1938341 words of memory out of 5000000
- 24826 multiletter control sequences out of 15000+600000
+ 2606 strings out of 476210
+ 38360 string characters out of 5795035
+ 1939341 words of memory out of 5000000
+ 24827 multiletter control sequences out of 15000+600000
  570667 words of font info for 91 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  57i,9n,65p,392b,310s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/OR2025譏^^a5Kondo.dvi (3 pages, 12376 bytes).
+Output written on out/OR2025譏^^a5Kondo.dvi (2 pages, 14464 bytes).

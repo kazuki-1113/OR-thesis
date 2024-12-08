@@ -1,0 +1,5 @@
+PWD c:/xlab-or-kondo
+INPUT c:/texlive/2024/texmf.cnf
+INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
+INPUT c:/texlive/2024/texmf-var/web2c/euptex/platex.fmt
+INPUT c:/xlab-or-kondo/OR2025春Kondo.tex

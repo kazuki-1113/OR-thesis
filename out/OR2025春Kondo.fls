@@ -109,10 +109,6 @@ INPUT ./figures/SNS_Docker.png
 INPUT extractbb -B cropbox -O figures/SNS_Docker.png
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 OUTPUT out/OR2025春Kondo.dvi
-INPUT ./figures/8core_1_15rps_error_rate.png
-INPUT ./figures/8core_1_15rps_error_rate.png
-INPUT ./figures/8core_1_15rps_error_rate.png
-INPUT extractbb -B cropbox -O figures/8core_1_15rps_error_rate.png
 INPUT ./figures/8core_1_15rps_increase_cpu.png
 INPUT ./figures/8core_1_15rps_increase_cpu.png
 INPUT ./figures/8core_1_15rps_increase_cpu.png
@@ -121,4 +117,8 @@ INPUT ./figures/8core_1_15rps_increase_mem.png
 INPUT ./figures/8core_1_15rps_increase_mem.png
 INPUT ./figures/8core_1_15rps_increase_mem.png
 INPUT extractbb -B cropbox -O figures/8core_1_15rps_increase_mem.png
+INPUT ./figures/8core_1_15rps_error_rate.png
+INPUT ./figures/8core_1_15rps_error_rate.png
+INPUT ./figures/8core_1_15rps_error_rate.png
+INPUT extractbb -B cropbox -O figures/8core_1_15rps_error_rate.png
 INPUT out/OR2025春Kondo.aux
