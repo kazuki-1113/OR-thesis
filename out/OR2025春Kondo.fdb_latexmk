@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1733674515.60478 "out/OR2025春Kondo.dvi" "out/OR2025春Kondo.pdf" "out/OR2025春Kondo" 1733674517.89051 0
-  "out/OR2025春Kondo.dvi" 1733674515 14464 ce1a57eeb94552627512e76547fbd3b2 "latex"
+["dvipdf"] 1733817703.30565 "out/OR2025春Kondo.dvi" "out/OR2025春Kondo.pdf" "out/OR2025春Kondo" 1733817705.58851 0
+  "out/OR2025春Kondo.dvi" 1733817703 14608 2ba3731ed1b298354391bcaed0589980 "latex"
   (generated)
   "out/OR2025春Kondo.pdf"
   (rewritten before read)
-["latex"] 1733674515.01812 "c:/xlab-or-kondo/OR2025春Kondo.tex" "out/OR2025春Kondo.dvi" "OR2025春Kondo" 1733674517.86963 0
-  "OR2025春Kondo.tex" 1733674514 23539 b50fc9121736edee9c0b275e8ec52f22 ""
+["latex"] 1733817702.70782 "c:/xlab-or-kondo/OR2025春Kondo.tex" "out/OR2025春Kondo.dvi" "OR2025春Kondo" 1733817705.58521 0
+  "OR2025春Kondo.tex" 1733817702 25127 2fb8093ec25eeac861a6482fa43a2376 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1712401459 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1712401940 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1712401940 1196 1be730212205a270378fba11a44765dc ""
@@ -32,6 +32,7 @@
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1712401417 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1712401417 1116 933a60c408fc0a863a92debe84b2d294 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1712401417 1120 8b7d695260f3cff42e636090a8002094 ""
+  "c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1712401417 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm" 1712401804 520 82a3d37183f34b6eb363a161dfc002c2 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/latex-fonts/lasy5.tfm" 1712401804 520 d082ac03a1087bc1ec2a06e24a9f68c0 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm" 1712401804 520 4889cce2180234b97cad636b6039c722 ""
@@ -65,13 +66,13 @@
   "c:/texlive/2024/texmf-dist/web2c/texmf.cnf" 1712401290 41663 c82a74d8036de408d74af2c8ae75c7e5 ""
   "c:/texlive/2024/texmf-var/web2c/euptex/platex.fmt" 1712402313 6901544 7232803d75826b6b153077c6b715aada ""
   "c:/texlive/2024/texmf.cnf" 1712402256 713 e69b156964470283e0530f5060668171 ""
-  "c:/xlab-or-kondo/OR2025春Kondo.tex" 1733674514 23539 b50fc9121736edee9c0b275e8ec52f22 ""
+  "c:/xlab-or-kondo/OR2025春Kondo.tex" 1733817702 25127 2fb8093ec25eeac861a6482fa43a2376 ""
   "figures/8core_1_15rps_error_rate.png" 1733052419 33925 60215c913f560e6e7d5cdfa091fdc990 ""
   "figures/8core_1_15rps_increase_cpu.png" 1733060400 197589 395c195a5a60b548b1ccfe8ddea16ef5 ""
   "figures/8core_1_15rps_increase_mem.png" 1733053374 122502 5a24e0020a6d0cf158b66f41dae473a2 ""
   "figures/SNS_Docker.png" 1733295357 307075 9fe23ca96e6f94688c1845e55ccd9f6e ""
   "orsabs-utf8.sty" 1702533648 5501 a150932245f1d3e829f6c0db86c66ca9 ""
-  "out/OR2025春Kondo.aux" 1733674515 2097 61110fefeb2c55a68eca4b7d902e755e "latex"
+  "out/OR2025春Kondo.aux" 1733817703 2048 f2bb2abfc10aabc7348ade9b5a33d0b1 "latex"
   (generated)
   "out/OR2025春Kondo.aux"
   "out/OR2025春Kondo.dvi"

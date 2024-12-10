@@ -121,4 +121,5 @@ INPUT ./figures/8core_1_15rps_error_rate.png
 INPUT ./figures/8core_1_15rps_error_rate.png
 INPUT ./figures/8core_1_15rps_error_rate.png
 INPUT extractbb -B cropbox -O figures/8core_1_15rps_error_rate.png
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT out/OR2025春Kondo.aux
