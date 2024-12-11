@@ -95,61 +95,36 @@
 % また，本研究では，Torquatoら\cite{Torquato2018SWAREa}が2018年に，ストレス期間，待期期間，若化期間のそれぞれでリソースの監視を行った研究を参考にし，本研究では監視期間というものを考える．
 % ただし，本研究では若化期間には踏み込まない．
 
-\section{実験環境}
-\label{sec:environment}
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.275]{figures/SNS_Docker.png}
-  \vspace{-0.4cm}
-  \caption{SNS運用環境と負荷ツール}
-  \label{fig:1}
-  \vspace{-0.2cm}
-\end{figure}
+\section{実験環境}\label{sec:environment}
+
 図\ref{fig:1}に示す実験環境は，2台のデバイスで構成されている．
-サーバーPCでは，Dockerを用いて，Windows OSとOpenPNEの運用環境を隔離している．
+サーバーPCでは，Dockerを用いてWindows OSとOpenPNEの運用環境を隔離している．
 この設定により，OpenPNE環境を独立させ，移植性が向上し，クリーンなメトリクスの取得が可能となる．
 クライアントPCにはJMeterをインストールし，LANケーブルでサーバーPCと接続する．
-物理的な接続による影響のリスクがあるが，通信関連の外部的な影響は排除できる．
+物理的な接続による影響のリスクはあるが，通信関連の外部的な影響は排除できる．
 
-本研究で使用する物理デバイスは以下の通りである．
+本研究で使用する物理デバイス及び，メトリクスとその収集方法は以下の通りである．
 \begin{itemize}
   \setlength{\parskip}{0cm} % 段落間
   \setlength{\itemsep}{0cm} % 項目間
-  \item サーバーPC:[CPU] 13th Gen Intel(R) Core(TM) i9-13900 3.00GHz，[RAM] 16.00GB，[OS] Windows 11 pro(23H2)
-  \item クライアントPC:[CPU] Intel(R) Core(TM) i7-6600U 2.60GHz，[RAM] 8.00GB，[OS] Windows 10 Enterprise(22H2)
-\end{itemize}
-また，メトリクスとその収集方法は以下の通りである．
-\begin{itemize}
-  \setlength{\parskip}{0cm} % 段落間
-  \setlength{\itemsep}{0cm} % 項目間
-  \item サーバーPC: Docker stats\footnote{https://docs.docker.com/reference/cli/docker/container/stats/}コマンド\par
-  メトリクス: CPU使用率，メモリ使用量(0.5秒毎)
-  \item クライアントPC: Jmeter\footnote{https://jmeter.apache.org/}\par
-  メトリクス: エラー率
+  \item サーバーPC: [CPU] 13th Gen Intel(R) Core(TM) i9-13900 3.00GHz，[RAM] 16.00GB，[OS] Windows 11 Pro (23H2)\par
+  メトリクス: CPU使用率，メモリ使用量(0.5秒毎)\par
+  収集方法: Docker stats\footnote{https://docs.docker.com/reference/cli/docker/container/stats/}コマンド
+  \item クライアントPC: [CPU] Intel(R) Core(TM) i7-6600U 2.60GHz，[RAM] 8.00GB，[OS] Windows 10 Enterprise (22H2)\par
+  \item メトリクス: エラー率\par
+  収集方法: Jmeter\footnote{https://jmeter.apache.org/}
 \end{itemize}
 
-\section{実験}
-本実験では，負荷の大きさをRPS (Requests Per Second)で表す．
-実験を開始して，0hから1hの間に10,000スレッドを立ち上げ，その後1hから25hをシナリオごとの負荷期間として設定する．
-さらに，Torquatoら\cite{Torquato2018SWAREa}を参考にし，監視期間を設定する．
-具体的には，\ref{subsec:load1}節と\ref{subsec:load2}節で，25hから27hを監視期間として追加し，10RPSの負荷を与えメトリクスを監視する．
-% 2018年に，ストレス期間，待期期間，若化期間のそれぞれでリソースの監視を行った研究を参考にし，本研究では監視期間というものを考える．
+\begin{figure}[t]
+  \centering
+  \includegraphics[scale=0.275]{figures/SNS_Docker.png}
+  \vspace{-0.55cm}
+  \caption{SNS運用環境と負荷ツール}
+  \label{fig:1}
+  \vspace{-0.15cm}
+\end{figure}
 
-\subsection{本実験環境の性能調査}
-\label{subsec:limit}
-本節では，$RPS=10，30，50，70$で負荷を与え，本実験環境におけるサーバーの性能限界を推測する．
-% \begin{table}[h]
-%   \centering
-%   \caption{エラー率とサーバーの性能限界}
-%   \label{tab:rps}
-%   \begin{tabular}{ccccc}
-%     \hline \hline
-%     負荷 [RPS] & 10 & 30 & 50 & 70 \\ \hline
-%     エラー率 [\%] & 0.87 & 56.51 & 72.75 & 80.20 \\ \hline
-%     性能限界 [RPS] & 9.91 & 13.5 & 13.63 & 15.33 \\ \hline
-%   \end{tabular}
-% \end{table}
-\begin{table}[h]
+\begin{table}[t]
   \vspace{-0.4cm}
   \centering
   \caption{エラー率とサーバーの性能限界}
@@ -163,14 +138,24 @@
   \vspace{-0.3cm}
 \end{table}
 
-表\ref{tab:rps}に，エラー率とそれに基づいて推測されたサーバーの性能限界を示す．
-性能限界は，1秒間に正しく処理できるリクエスト数とし，$性能限界=負荷\times(100\%-エラー率)$により計算する。
+\section{実験}
+本実験では，0hから1hの間に10,000スレッドを立ち上げ，その後1hから25hを負荷期間として設定する．
+さらに，Torquatoら\cite{Torquato2018SWAREa}を参考にし，25hから27hを監視期間として設定し，RPS$=10$の負荷を与え，メトリクスを監視する．
+なお，RPS (Requests Per Second)は負荷の大きさを表す単位である．
+
+\subsection{本実験環境の性能調査}
+\label{subsec:limit}
+本節では，RPS$=5，10，15，20$で負荷を与え，本実験環境におけるサーバーの性能限界を推測する．
+
+表\ref{tab:rps}にエラー率とそれに基づいて推測されたサーバーの性能限界を示す．
+性能限界は，1秒間に正しく処理できるリクエスト数とし，$性能限界=負荷\times(100\%-エラー率)$により計算する．
 表\ref{tab:rps}から，本実験環境の性能限界は9RPSから11RPS程度であると推測する．
+なお，本節の実験では監視期間を設定していない．
 
 \subsection{シナリオ1:一定負荷(監視期間2h)}\label{subsec:load1}
 
 本節では現実の定常的な状況を想定した一定負荷のシナリオを考える．
-\ref{subsec:limit}節の結果を踏まえ，$RPS=5，10，15$と設定して，3種類のメトリクスデータを得た．
+\ref{subsec:limit}節の結果を踏まえ，RPS$=5，10，15$と設定して，3種類のメトリクスデータを得た．
 % 現実において，定常的な状況と対応する．
 % 三つの負荷シナリオについて，1h～25hの負荷期間における全メトリクスは，Mann-Kendall検定\cite{Mann1945Nonparametric}により帰無仮説が否定された．
 % また，Senの傾き推定\cite{Sen1968Estimates}により傾き$E$の推定値は，0.00005～0.0035の範囲と非常に小さいものの，正の値を示し，ソフトウェアエージングのリスクが発見された．
@@ -181,30 +166,28 @@
 
 本節では，\ref{subsec:limit}節より推測した性能限界の範囲内で負荷を段階的に増加させ，現実における注目度が高まる状況を想定する．
 具体的には，1hから25hの間に，1RPSから15RPSまで線形に負荷を増加させる．
-% 対照実験である\ref{subsec:load1}節の結果と比較し，監視期間における各メトリクスの変動に着目する．
 
 図\ref{f1}，図\ref{f2}，図\ref{f3}は，3種類のメトリクスの時系列変化を示している．
 スレッド立ち上げ期間中は負荷の大きさにより，各メトリクスが比較的高い値を示している．
 増加負荷の期間では，負荷の増加に伴い，全メトリクスが増加していることが確認できる．
-特にエラー率は，負荷が約10RPS程度に達する16時間ごろから急激に増加しており，推測された性能限界を超えた分の負荷に対してエラーが生じた．
+特にエラー率は，負荷が約10RPS程度に達する16時間ごろから急激に増加しており，推測された性能限界の妥当性が確認された．
 また，CPU使用率とメモリ使用量については，同時間帯までは増加傾向にあったが，それ以降は急激な増加は見られなかった．
 \ref{subsec:limit}節と\ref{subsec:load1}節の結果と合わせて考えると，メモリ使用量がCPU使用率よりも先に限界に達したことが，エラー率上昇の原因と考察する．
+これは，サーバー運用において予算が限られている場合，高性能なCPUを用意するよりも，メモリ容量を増やす方が効果的であることを示唆する．
+さらに，\ref{subsec:load1}節と同期間のメトリクスデータに対して，Mann-Kendall検定とSenの傾き推定を行った結果，前者は帰無仮説が棄却され，後者は傾きの推定値が正であり，各メトリクスの増加傾向が認められた．\par
 % ここの考察については，卒論では書く
 % ことを考えると，メモリ使用の設定に問題があると考えられる．
 % この主な原因は，phpのmpm\_eventモジュールが並列処理に不適な環境であることだと考えられる．
-
-また，\ref{subsec:load1}節の監視期間のデータと比較すると，とCPU使用率メモリ使用量は，負荷期間の差異による監視期間のメトリクスの変動への影響は見られなかった．
-一方で，エラー率は，負荷の程度によって，増減の範囲が大きくなるという意味で不安定になる可能性があると確認できた．
-% 一方で，エラー率に関しては，その直前の負荷の程度の影響を受ける可能性があると考察する．
-% これは，増加負荷と\ref{subsec:load1}節のRPS$=$15の場合を比較すると，視覚的に似た変動をしていたためである．
-% ，RPS=5，10の場合と異なり
+また，監視期間におけるエラー率は直前の負荷期間のシナリオによって，異なる振舞を見せていることが確認された．
+% また，\ref{subsec:load1}節の監視期間のデータと比較すると，とCPU使用率メモリ使用量は，負荷期間の差異による監視期間のメトリクスの変動への影響は見られなかった．
+% 一方で，エラー率は，負荷の程度によって，増減の範囲が大きくなるという意味で不安定になる可能性があると確認できた．
 \section{結論と今後の展望}
-本研究では，比較的シンプルなSNS設定を用いて，サーバーの性能限界を推測し比較的低い一定負荷でもソフトウェアエージングのリスクが存在することを確認した．
-% \vspace{-0.4cm}
-一方で，一定負荷と増加負荷の場合との間で，監視期間の各メトリクスデータへの影響は確認できなかった．
-また，本実験環境では意図しないメモリ使用量の限界が確認された．
+本研究では，比較的シンプルなSNS設定を用いて，サーバーの性能限界を推測し，比較的低い一定負荷でもソフトウェアエージングのリスクが存在することを確認した．
+また，監視期間のエラー率の振舞が負荷期間のシナリオによって，異なる現象は確認されたが，同期間のCPU使用率やメモリ使用量の振舞に同様の傾向は見られなかったことから，追加のメトリクスの観察が必要であると考えられる．
+加えて，本実験では意図しないメモリ使用量の制限が確認された．
 % 具体的には，コンテナに割り当てたメモリは16GB，CPUは8コアであるが，前者は25\%以下，後者は20\%～80\%程度の使用率であるにも関わらず，エラーを生じている．\par
-具体的には，OpenPNEのサーバーコンテナに割り当てたメモリは16GBであるが，実際のメモリ使用量は25\%以下で停滞したことに伴い，CPU使用率の上昇も停滞した結果，エラーが生じた．
+具体的には，DockerでAPACHE$+$PHPコンテナに割り当てたメモリは16GBであるが，実際のメモリ使用量は4GB(25\%)以下で停滞している．
+この現象の原因究明及び，ソフトウェアエージングとの関連性の解明が課題として挙げられる．\par
 \begin{figure}[t]
   \centering
   \includegraphics[width=5.2cm]{figures/8core_1_15rps_increase_cpu.png}
@@ -223,10 +206,10 @@
   \vspace{-0.5cm}
   \caption{エラー率}
   \label{f3}
-  \vspace{-0.3cm}
+  \vspace{-0.5cm}
 \end{figure}
-これは，サーバー運用において予算が限られている場合，高性能なCPUを用意するよりも，メモリ使用量を増やす方が効果的であることを示唆する．
-今後は，より高度な拡張機能を追加し適切な設定を整えた上で，ここで得られた知見の検証を行うことが課題である．
+
+今後は，より高度な拡張機能を追加し，適切な設定を整えた上で，ここで得られた知見の検証を行うことが課題である．
 また，近年では，SNSだけでなく，多くのWebサーバーはクラウド環境で運用されている．
 従って，今後はOpenPNEをクラウド環境にデプロイし，より現実的な負荷テストを実施することが望まれる．
 % また，本研究ではソフトウェア若化手法についての検討を行っていない．
@@ -250,10 +233,10 @@
   % Y.Huang, C.Kintala, N.Kolettis and N.D.Fulton, “Software Rejuvenation: Analysis, Module and Applications,” 25th International Symposium on Fault-Tolerant Computing(FTCS1995), pp. 381-390, 1995.
 
   \bibitem{Dohi2020Handbook}
-  T. Dohi, K. Trivedi and A. Avritzer, \emph{Handbook of Software Aging and Rejuvenation}, WORLD SCIENTIFIC, pp. 73--90, 2020.
+  T. Dohi, K. Trivedi, and A. Avritzer, \emph{Handbook of Software Aging and Rejuvenation}, WORLD SCIENTIFIC, pp. 73--90, 2020.
 
   \bibitem{Torquato2018SWAREa}
-  M. Torquato, J. Araujo, I. M. Umesh, and P. R. M. Maciel, “SWARE: A Methodology for Software Aging and Rejuvenation Experiments,” \emph{Journal of Information Systems Engineering \& Management}, vol. 3, pp. 15, 2018.
+  M. Torquato, J. Araujo, I. M. Umesh, and P. R. M. Maciel, “SWARE: A methodology for software aging and rejuvenation experiments,” \emph{Journal of Information Systems Engineering \& Management}, vol. 3, pp. 15, 2018.
 
   \bibitem{Mann1945Nonparametric}
   H. B. Mann, “Nonparametric Tests Against Trend,” \emph{Econometrica}, vol. 13, no. 3, pp. 245--259, 1945.
