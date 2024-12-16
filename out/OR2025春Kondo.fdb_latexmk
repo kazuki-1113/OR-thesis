@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1733905533.01502 "out/OR2025春Kondo.dvi" "out/OR2025春Kondo.pdf" "out/OR2025春Kondo" 1733905535.34576 0
-  "out/OR2025春Kondo.dvi" 1733905532 14796 3dc40ac9844f4e34ba9c195c345df228 "latex"
+["dvipdf"] 1734336274.1429 "out/OR2025春Kondo.dvi" "out/OR2025春Kondo.pdf" "out/OR2025春Kondo" 1734336278.91238 0
+  "out/OR2025春Kondo.dvi" 1734336274 14836 9c741987bf7361a821eddcac8783f2cd "latex"
   (generated)
   "out/OR2025春Kondo.pdf"
   (rewritten before read)
-["latex"] 1733905532.39648 "c:/xlab-or-kondo/OR2025春Kondo.tex" "out/OR2025春Kondo.dvi" "OR2025春Kondo" 1733905535.34279 0
-  "OR2025春Kondo.tex" 1733905531 24548 92a7015ac965f9eae3875cdec214d8ab ""
+["latex"] 1734336272.84477 "c:/xlab-or-kondo/OR2025春Kondo.tex" "out/OR2025春Kondo.dvi" "OR2025春Kondo" 1734336278.90557 0
+  "OR2025春Kondo.tex" 1734336272 24698 b1950824b80fb89b071cc0cfed259187 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1712401459 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1712401940 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1712401940 1196 1be730212205a270378fba11a44765dc ""
@@ -66,13 +66,13 @@
   "c:/texlive/2024/texmf-dist/web2c/texmf.cnf" 1712401290 41663 c82a74d8036de408d74af2c8ae75c7e5 ""
   "c:/texlive/2024/texmf-var/web2c/euptex/platex.fmt" 1712402313 6901544 7232803d75826b6b153077c6b715aada ""
   "c:/texlive/2024/texmf.cnf" 1712402256 713 e69b156964470283e0530f5060668171 ""
-  "c:/xlab-or-kondo/OR2025春Kondo.tex" 1733905531 24548 92a7015ac965f9eae3875cdec214d8ab ""
-  "figures/8core_1_15rps_error_rate.png" 1733052419 33925 60215c913f560e6e7d5cdfa091fdc990 ""
+  "c:/xlab-or-kondo/OR2025春Kondo.tex" 1734336272 24698 b1950824b80fb89b071cc0cfed259187 ""
   "figures/8core_1_15rps_increase_cpu.png" 1733060400 197589 395c195a5a60b548b1ccfe8ddea16ef5 ""
   "figures/8core_1_15rps_increase_mem.png" 1733053374 122502 5a24e0020a6d0cf158b66f41dae473a2 ""
   "figures/SNS_Docker.png" 1733295357 307075 9fe23ca96e6f94688c1845e55ccd9f6e ""
+  "figures/or_8core_1_15_error_rate.png" 1734335356 35457 529c297a5ea062aa8ff44e03904d3c73 ""
   "orsabs-utf8.sty" 1702533648 5501 a150932245f1d3e829f6c0db86c66ca9 ""
-  "out/OR2025春Kondo.aux" 1733905532 2048 232c2b25d1221e9feda7ebc2e8d90b27 "latex"
+  "out/OR2025春Kondo.aux" 1734336273 2109 e46dd24c8f17766dd780dd205a4d1dcf "latex"
   (generated)
   "out/OR2025春Kondo.aux"
   "out/OR2025春Kondo.dvi"

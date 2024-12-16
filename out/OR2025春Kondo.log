@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2024.4.6)  11 DEC 2024 17:25
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2024.4.6)  16 DEC 2024 17:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -198,7 +198,7 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 29.
 
-Overfull \hbox (15.58276pt too wide) in paragraph at lines 112--112
+Overfull \hbox (15.58276pt too wide) in paragraph at lines 114--114
 [][]\OT1/cmr/m/n/8 https://docs.docker.com/reference/cli/docker/container/stats/| 
  []
 
@@ -212,16 +212,16 @@ File: figures/8core_1_15rps_increase_cpu.png Graphic file (type bmp)
 <figures/8core_1_15rps_increase_cpu.png>
 File: figures/8core_1_15rps_increase_mem.png Graphic file (type bmp)
 <figures/8core_1_15rps_increase_mem.png>
-File: figures/8core_1_15rps_error_rate.png Graphic file (type bmp)
-<figures/8core_1_15rps_error_rate.png>
+File: figures/or_8core_1_15_error_rate.png Graphic file (type bmp)
+<figures/or_8core_1_15_error_rate.png>
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 236.
+(Font)              No change on input line 241.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 239.
+(Font)              No change on input line 244.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 242.
+(Font)              No change on input line 247.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 245.
+(Font)              No change on input line 250.
 [2] (out/OR2025譏^^a5Kondo.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
@@ -232,10 +232,10 @@ L3 programming layer <2024-03-14>
 Here is how much of TeX's memory you used:
  2609 strings out of 476210
  38390 string characters out of 5795035
- 1940341 words of memory out of 5000000
+ 1941341 words of memory out of 5000000
  24829 multiletter control sequences out of 15000+600000
  571013 words of font info for 92 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  57i,8n,65p,392b,310s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/OR2025譏^^a5Kondo.dvi (2 pages, 14796 bytes).
+Output written on out/OR2025譏^^a5Kondo.dvi (2 pages, 14836 bytes).
