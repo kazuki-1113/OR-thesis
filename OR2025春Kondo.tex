@@ -108,20 +108,32 @@
   \setlength{\parskip}{0cm} % 段落間
   \setlength{\itemsep}{0cm} % 項目間
   \item サーバーPC:
-  % \begin{itemize}
-  \item[*] スペック: [CPU] 13th Gen Intel(R) Core(TM) i9-13900 3.00GHz，[RAM] 16.00GB，[OS] Windows 11 Pro (23H2)\par
-  \item[*] メトリクス: CPU使用率，メモリ使用量(0.5秒毎)\par
+  \vspace{-0.05cm}
+  \begin{itemize}
+  \leftskip=-1zw%
+  \item[*] スペック: [CPU] Intel(R) Core(TM) i9-13900 3.00GHz，[RAM] 16.00GB，[OS] Windows 11 Pro (23H2)\par
+  \vspace{-0.05cm}
+  \item[*] メトリクス: CPU使用率，メモリ使用量\par
+  \vspace{-0.05cm}
   \item[*] 収集方法: Docker stats\footnote{https://docs.docker.com/reference/cli/docker/container/stats/}コマンド
-  % \end{itemize}
+  \leftskip=-1zw%
+  \end{itemize}
   \item クライアントPC:
+  \vspace{-0.05cm}
+  \begin{itemize}
+  \leftskip=-1zw%
   \item[*] スペック: [CPU] Intel(R) Core(TM) i7-6600U 2.60GHz，[RAM] 8.00GB，[OS] Windows 10 Enterprise (22H2)\par
+  \vspace{-0.05cm}
   \item[*] メトリクス: エラー率\par
+  \vspace{-0.05cm}
   \item[*] 収集方法: Jmeter\footnote{https://jmeter.apache.org/}
+  \leftskip=-1zw%
+  \end{itemize}
 \end{itemize}
 
 \begin{figure}[t]
   \centering
-  \includegraphics[scale=0.24]{figures/SNS_Docker.png}
+  \includegraphics[scale=0.239]{figures/SNS_Docker.png}
   \vspace{-0.55cm}
   \caption{SNS運用環境と負荷ツール}
   \label{fig:1}
@@ -149,7 +161,8 @@
 
 \subsection{本実験環境の性能調査}
 \label{subsec:limit}
-本節では，RPS$~=5，10，15，20$で負荷を与え，本実験環境におけるサーバーの性能限界を推測する．
+% 本実験環境における
+本節では，負荷を5RPS，10RPS，15RPS，20RPSで与え，用意したサーバーの性能限界を推測する．
 
 表\ref{tab:rps}にエラー率とそれに基づいて推測されたサーバーの性能限界を示す．
 性能限界は，1秒間に正しく処理できるリクエスト数とし，$性能限界=負荷\times(100\%-エラー率)$により計算する．
@@ -159,7 +172,7 @@
 \subsection{シナリオ1:一定負荷(監視期間2h)}\label{subsec:load1}
 
 本節では現実の定常的な状況を想定した一定負荷のシナリオを考える．
-\ref{subsec:limit}節の結果を踏まえ，RPS$~=5，10，15$と設定して，3種類のメトリクスデータを得た．
+\ref{subsec:limit}節の結果を踏まえ，負荷を5RPS，10RPS，15RPSと設定して，3種類のメトリクスデータを得た．
 % 現実において，定常的な状況と対応する．
 % 三つの負荷シナリオについて，1h～25hの負荷期間における全メトリクスは，Mann-Kendall検定\cite{Mann1945Nonparametric}により帰無仮説が否定された．
 % また，Senの傾き推定\cite{Sen1968Estimates}により傾き$E$の推定値は，0.00005～0.0035の範囲と非常に小さいものの，正の値を示し，ソフトウェアエージングのリスクが発見された．
@@ -182,12 +195,12 @@
 % ここの考察については，卒論では書く
 % ことを考えると，メモリ使用の設定に問題があると考えられる．
 % この主な原因は，phpのmpm\_eventモジュールが並列処理に不適な環境であることだと考えられる．
-また，監視期間におけるエラー率は直前の負荷期間のシナリオによって，異なる振舞を見せていることが確認された．
+また，監視期間におけるエラー率は，直前の負荷期間のシナリオによって異なる振る舞いを見せていることが確認された．
 % また，\ref{subsec:load1}節の監視期間のデータと比較すると，とCPU使用率メモリ使用量は，負荷期間の差異による監視期間のメトリクスの変動への影響は見られなかった．
 % 一方で，エラー率は，負荷の程度によって，増減の範囲が大きくなるという意味で不安定になる可能性があると確認できた．
 \section{結論と今後の展望}
 本研究では，比較的シンプルなSNS設定を用いて，サーバーの性能限界を推測し，比較的低い一定負荷でもソフトウェアエージングのリスクが存在することを確認した．
-また，監視期間のエラー率の振舞が負荷期間のシナリオによって異なる現象は確認されたものの，同期間のCPU使用率やメモリ使用量の振舞に同様の傾向は見られなかったことから，追加のメトリクスの観察が必要であると考えられる．
+また，監視期間のエラー率の振る舞いが負荷期間のシナリオによって異なる現象は確認されたものの，同期間のCPU使用率やメモリ使用量の振舞に同様の傾向は見られなかったことから，追加のメトリクスの観察が必要であると考えられる．
 加えて，本実験では意図しないメモリ使用量の制限が確認された．
 % 具体的には，コンテナに割り当てたメモリは16GB，CPUは8コアであるが，前者は25\%以下，後者は20\%～80\%程度の使用率であるにも関わらず，エラーを生じている．\par
 具体的には，DockerでAPACHE$~+~$PHPコンテナに割り当てたメモリは16GBであるが，実際のメモリ使用量は4GB(25\%)以下で停滞している．
@@ -244,10 +257,10 @@
   M. Torquato, J. Araujo, I. M. Umesh, and P. R. M. Maciel, “SWARE: A methodology for software aging and rejuvenation experiments,” \emph{Journal of Information Systems Engineering \& Management}, vol. 3, pp. 15, 2018.
 
   \bibitem{Mann1945Nonparametric}
-  H. B. Mann, “Nonparametric Tests Against Trend,” \emph{Econometrica}, vol. 13, no. 3, pp. 245--259, 1945.
+  H. B. Mann, “Nonparametric tests against trend,” \emph{Econometrica}, vol. 13, no. 3, pp. 245--259, 1945.
 
   \bibitem{Sen1968Estimates}
-  P. K. Sen, “Estimates of the Regression Coefficient Based on Kendall's Tau,” \emph{Journal of the American Statistical Association}, vol. 63, no. 324, pp. 1379--1389, 1968.
+  P. K. Sen, “Estimates of the regression coefficient based on Kendall's tau,” \emph{Journal of the American Statistical Association}, vol. 63, no. 324, pp. 1379--1389, 1968.
 
 \end{thebibliography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
